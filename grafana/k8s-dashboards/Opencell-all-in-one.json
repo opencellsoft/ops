@@ -16,13 +16,13 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 26,
-  "iteration": 1601303795032,
+  "id": 2,
+  "iteration": 1601369862296,
   "links": [],
   "panels": [
     {
       "content": "",
-      "datasource": null,
+      "datasource": "Prometheus",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -448,7 +448,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "base_cpu_availableProcessors{container=\"opencell\", endpoint=\"http-management\", instance=\"10.2.1.178:9990\", job=\"monitoring/opencell\", namespace=\"client-test\", pod=\"opencell-0\"}",
+      "tableColumn": "base_cpu_availableProcessors{container=\"opencell\", endpoint=\"http-management\", instance=\"10.2.2.126:9990\", job=\"client-test/opencell\", namespace=\"client-test\", pod=\"opencell-0\"}",
       "targets": [
         {
           "expr": "base_cpu_availableProcessors{namespace=\"$namespace\",pod=\"$pod\"}",
@@ -787,7 +787,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -884,7 +884,7 @@
     },
     {
       "columns": [],
-      "datasource": null,
+      "datasource": "Prometheus",
       "description": "Status of Jobs",
       "fieldConfig": {
         "defaults": {
@@ -915,7 +915,6 @@
       },
       "styles": [
         {
-          "$$hashKey": "object:882",
           "alias": "Time",
           "align": "auto",
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
@@ -923,7 +922,6 @@
           "type": "hidden"
         },
         {
-          "$$hashKey": "object:883",
           "alias": "Metric name",
           "align": "auto",
           "colorMode": null,
@@ -943,7 +941,6 @@
           "valueMaps": []
         },
         {
-          "$$hashKey": "object:884",
           "alias": "Instance",
           "align": "auto",
           "colorMode": null,
@@ -954,6 +951,7 @@
           ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
+          "link": false,
           "mappingType": 1,
           "pattern": "pod",
           "thresholds": [],
@@ -961,7 +959,6 @@
           "unit": "short"
         },
         {
-          "$$hashKey": "object:885",
           "alias": "",
           "align": "auto",
           "colorMode": null,
@@ -972,6 +969,7 @@
           ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
+          "link": false,
           "mappingType": 1,
           "pattern": "job",
           "thresholds": [],
@@ -979,7 +977,6 @@
           "unit": "short"
         },
         {
-          "$$hashKey": "object:886",
           "alias": "Status",
           "align": "auto",
           "colorMode": "cell",
@@ -1001,19 +998,16 @@
           "unit": "short",
           "valueMaps": [
             {
-              "$$hashKey": "object:955",
               "text": "Running",
               "value": "1"
             },
             {
-              "$$hashKey": "object:956",
               "text": "Not Runnig",
               "value": "0"
             }
           ]
         },
         {
-          "$$hashKey": "object:887",
           "alias": "Jobs Names",
           "align": "auto",
           "colorMode": null,
@@ -1032,7 +1026,77 @@
           "unit": "short"
         },
         {
-          "$$hashKey": "object:888",
+          "alias": "namespace",
+          "align": "",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "mappingType": 1,
+          "pattern": "namespace",
+          "preserveFormat": false,
+          "sanitize": false,
+          "thresholds": [],
+          "type": "string",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "container",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "endpoint",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "instance",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
           "alias": "",
           "align": "auto",
           "colorMode": null,
@@ -1042,6 +1106,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "decimals": 2,
+          "link": false,
           "pattern": "/.*/",
           "thresholds": [],
           "type": "string",
@@ -1070,7 +1135,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1168,7 +1233,7 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Loki",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1257,7 +1322,7 @@
       }
     },
     {
-      "datasource": "Loki",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -1299,7 +1364,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Prometheus",
       "decimals": null,
       "fieldConfig": {
         "defaults": {
@@ -1415,7 +1480,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1508,7 +1573,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1597,7 +1662,7 @@
       }
     }
   ],
-  "refresh": "10s",
+  "refresh": false,
   "schemaVersion": 26,
   "style": "dark",
   "tags": [],
@@ -1664,7 +1729,7 @@
         "useTags": false
       },
       {
-        "datasource": null,
+        "datasource": "Prometheus",
         "filters": [],
         "hide": 0,
         "label": "",
@@ -1675,8 +1740,8 @@
     ]
   },
   "time": {
-    "from": "now-15m",
-    "to": "now"
+    "from": "2020-09-29T09:42:24.779Z",
+    "to": "2020-09-29T09:45:35.428Z"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -1705,5 +1770,5 @@
   "timezone": "browser",
   "title": "Opencell all in one dashboard",
   "uid": "rz0bj0ZGk",
-  "version": 17
+  "version": 1
 }
