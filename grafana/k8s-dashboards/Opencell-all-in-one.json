@@ -1,4 +1,64 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "7.1.5"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "logs",
+      "name": "Logs",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "table-old",
+      "name": "Table (old)",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "text",
+      "name": "Text",
+      "version": "7.1.0"
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -16,13 +76,13 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 2,
-  "iteration": 1601369862296,
+  "id": null,
+  "iteration": 1601545934082,
   "links": [],
   "panels": [
     {
       "content": "",
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -63,7 +123,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
       "editable": true,
       "error": false,
@@ -159,7 +219,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "editable": true,
       "error": false,
       "fieldConfig": {
@@ -248,7 +308,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 0,
       "editable": true,
       "error": false,
@@ -264,7 +324,7 @@
       "grid": {},
       "gridPos": {
         "h": 5,
-        "w": 11,
+        "w": 10,
         "x": 8,
         "y": 1
       },
@@ -381,127 +441,106 @@
     },
     {
       "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": false,
-      "colors": [
-        "rgba(50, 172, 45, 0.97)",
-        "rgba(237, 129, 40, 0.89)",
-        "rgba(245, 54, 54, 0.9)"
-      ],
-      "datasource": "Prometheus",
-      "decimals": null,
-      "editable": true,
-      "error": false,
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "mappings": [
+            {
+              "id": 0,
+              "op": "=",
+              "text": "0",
+              "type": 1,
+              "value": "null"
+            }
+          ],
+          "nullValueMode": "connected",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "none"
         },
         "overrides": []
       },
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 3,
-        "w": 2,
-        "x": 19,
+        "w": 3,
+        "x": 18,
         "y": 1
       },
       "hideTimeOverride": true,
-      "id": 45,
+      "id": 60,
       "interval": null,
-      "isNew": true,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
       "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
       },
-      "tableColumn": "base_cpu_availableProcessors{container=\"opencell\", endpoint=\"http-management\", instance=\"10.2.2.126:9990\", job=\"client-test/opencell\", namespace=\"client-test\", pod=\"opencell-0\"}",
+      "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "base_cpu_availableProcessors{namespace=\"$namespace\",pod=\"$pod\"}",
-          "hide": false,
+          "expr": "sum(promtail_custom_opencell_errors{exported_namespace=\"$namespace\",statefulset_kubernetes_io_pod_name=\"$pod\"})",
+          "format": "time_series",
           "instant": false,
           "interval": "",
           "intervalFactor": 1,
           "legendFormat": "",
           "refId": "A",
-          "step": 10
+          "step": 60
         }
       ],
-      "thresholds": "",
       "timeFrom": null,
-      "title": "CPU Number",
+      "timeShift": null,
+      "title": "Errors",
       "transparent": true,
-      "type": "singlestat",
-      "valueFontSize": "50%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "avg"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": false,
-      "colors": [
-        "rgba(245, 54, 54, 0.9)",
-        "rgba(237, 129, 40, 0.89)",
-        "rgba(50, 172, 45, 0.97)"
-      ],
-      "datasource": "Prometheus",
-      "decimals": 2,
-      "editable": true,
-      "error": false,
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "decimals": 2,
+          "mappings": [
+            {
+              "id": 0,
+              "op": "=",
+              "text": "N/A",
+              "type": 1,
+              "value": "null"
+            }
+          ],
+          "nullValueMode": "connected",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgba(0, 0, 0, 0.79)",
+                "value": null
+              }
+            ]
+          },
+          "unit": "s"
         },
         "overrides": []
-      },
-      "format": "s",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
       },
       "gridPos": {
         "h": 2,
@@ -512,44 +551,28 @@
       "hideTimeOverride": true,
       "id": 47,
       "interval": null,
-      "isNew": true,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
       "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "value"
       },
-      "tableColumn": "base_jvm_uptime_seconds{container=\"opencell\", endpoint=\"http-management\", instance=\"10.2.1.178:9990\", job=\"monitoring/opencell\", namespace=\"client-test\", pod=\"opencell-0\"}",
+      "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "base_jvm_uptime_seconds{namespace=~\"namespace\",pod=~\"pod\"}",
+          "expr": "base_jvm_uptime_seconds{namespace=~\"$namespace\",pod=~\"$pod\"}",
           "format": "time_series",
+          "hide": false,
           "instant": false,
           "interval": "",
           "intervalFactor": 1,
@@ -558,20 +581,10 @@
           "step": 60
         }
       ],
-      "thresholds": "",
       "timeFrom": null,
       "title": "Uptime of the JVM",
       "transparent": true,
-      "type": "singlestat",
-      "valueFontSize": "50%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
@@ -582,7 +595,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(50, 172, 45, 0.97)"
       ],
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 2,
       "editable": true,
       "error": false,
@@ -601,10 +614,10 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 2,
-        "w": 5,
-        "x": 19,
-        "y": 4
+        "h": 3,
+        "w": 3,
+        "x": 21,
+        "y": 3
       },
       "hideTimeOverride": true,
       "id": 48,
@@ -643,7 +656,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "opencell-0",
+      "tableColumn": "opencell-1",
       "targets": [
         {
           "expr": "application_node_uname_info{namespace=\"$namespace\",pod=\"$pod\"}",
@@ -673,11 +686,108 @@
       "valueName": "name"
     },
     {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(50, 172, 45, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
+      ],
+      "datasource": "${DS_PROMETHEUS}",
+      "decimals": null,
+      "editable": true,
+      "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 3,
+        "x": 18,
+        "y": 4
+      },
+      "hideTimeOverride": true,
+      "id": 45,
+      "interval": null,
+      "isNew": true,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "base_cpu_availableProcessors{container=\"opencell\", endpoint=\"http-management\", instance=\"10.2.0.61:9990\", job=\"client-test/opencell\", namespace=\"client-test\", pod=\"opencell-1\"}",
+      "targets": [
+        {
+          "expr": "base_cpu_availableProcessors{namespace=\"$namespace\",pod=\"$pod\"}",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "title": "CPU Number",
+      "transparent": true,
+      "type": "singlestat",
+      "valueFontSize": "50%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 2,
       "editable": true,
       "error": false,
@@ -787,7 +897,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -884,7 +994,7 @@
     },
     {
       "columns": [],
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Status of Jobs",
       "fieldConfig": {
         "defaults": {
@@ -1135,7 +1245,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1233,7 +1343,7 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1322,7 +1432,7 @@
       }
     },
     {
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -1364,7 +1474,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
       "fieldConfig": {
         "defaults": {
@@ -1480,7 +1590,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1573,7 +1683,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1665,21 +1775,15 @@
   "refresh": false,
   "schemaVersion": 26,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "Opencell"
+  ],
   "templating": {
     "list": [
       {
         "allValue": null,
-        "current": {
-          "selected": true,
-          "text": [
-            "client-test"
-          ],
-          "value": [
-            "client-test"
-          ]
-        },
-        "datasource": "Prometheus",
+        "current": {},
+        "datasource": "${DS_PROMETHEUS}",
         "definition": "label_values({pod=~\"opencell-.\"}, namespace)",
         "hide": 0,
         "includeAll": true,
@@ -1700,16 +1804,8 @@
       },
       {
         "allValue": null,
-        "current": {
-          "selected": true,
-          "text": [
-            "opencell-0"
-          ],
-          "value": [
-            "opencell-0"
-          ]
-        },
-        "datasource": "Prometheus",
+        "current": {},
+        "datasource": "${DS_PROMETHEUS}",
         "definition": "label_values({pod=~\"opencell-.\"},pod)",
         "hide": 0,
         "includeAll": true,
@@ -1740,8 +1836,8 @@
     ]
   },
   "time": {
-    "from": "2020-09-29T09:42:24.779Z",
-    "to": "2020-09-29T09:45:35.428Z"
+    "from": "now-30m",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -1770,5 +1866,5 @@
   "timezone": "browser",
   "title": "Opencell all in one dashboard",
   "uid": "rz0bj0ZGk",
-  "version": 1
+  "version": 8
 }
