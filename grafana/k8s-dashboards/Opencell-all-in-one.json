@@ -16,8 +16,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 24,
-  "iteration": 1601884425685,
+  "id": 2,
+  "iteration": 1602518650036,
   "links": [],
   "panels": [
     {
@@ -287,8 +287,11 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "7.2.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -433,10 +436,10 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "7.2.0",
       "targets": [
         {
-          "expr": "sum(promtail_custom_opencell_errors{exported_namespace=~\"$namespace\",statefulset_kubernetes_io_pod_name=~\"$pod\"})",
+          "expr": "sum(promtail_custom_opencell_errors{exported_namespace=\"$namespace\",statefulset_kubernetes_io_pod_name=\"$pod\"})",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -507,7 +510,7 @@
         },
         "textMode": "value"
       },
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "7.2.0",
       "targets": [
         {
           "expr": "base_jvm_uptime_seconds{namespace=~\"$namespace\",pod=~\"$pod\"}",
@@ -596,10 +599,10 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "opencell-1",
+      "tableColumn": "",
       "targets": [
         {
-          "expr": "application_node_uname_info{namespace=~\"$namespace\",pod=~\"$pod\"}",
+          "expr": "application_node_uname_info{namespace=\"$namespace\",pod=\"$pod\"}",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -694,10 +697,10 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn"",
+      "tableColumn": "",
       "targets": [
         {
-          "expr": "base_cpu_availableProcessors{namespace=~\"$namespace\",pod=~\"$pod\"}",
+          "expr": "base_cpu_availableProcessors{namespace=\"$namespace\",pod=\"$pod\"}",
           "hide": false,
           "instant": false,
           "interval": "",
@@ -720,7 +723,7 @@
           "value": "null"
         }
       ],
-      "valueName": "current"
+      "valueName": "avg"
     },
     {
       "aliasColors": {},
@@ -765,8 +768,11 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "7.2.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -867,8 +873,11 @@
       "lines": true,
       "linewidth": 1,
       "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "7.2.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1217,8 +1226,11 @@
       "lines": true,
       "linewidth": 1,
       "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "7.2.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1283,7 +1295,7 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "loki",
+      "datasource": "Loki",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1297,100 +1309,6 @@
         "h": 5,
         "w": 12,
         "x": 0,
-        "y": 19
-      },
-      "hiddenSeries": false,
-      "id": 62,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": false,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "percentage": false,
-      "pluginVersion": "7.1.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "rate({namespace=~\"$namespace\"}[$__interval])",
-          "legendFormat": "Opencell {{namespace}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Log Opencell",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": true,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "loki",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 5,
-        "w": 12,
-        "x": 12,
         "y": 19
       },
       "hiddenSeries": false,
@@ -1409,8 +1327,11 @@
       "lines": false,
       "linewidth": 1,
       "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "7.2.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1420,8 +1341,8 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate({app_kubernetes_io_name=~\"pure-ftpd\"}[$__interval])",
-          "legendFormat": "Log {{job}}",
+          "expr": "rate({namespace=~\"$namespace\",pod=~\"$pod\"}[$__interval])",
+          "legendFormat": "",
           "refId": "A"
         }
       ],
@@ -1429,7 +1350,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Log FTP",
+      "title": "Log",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1467,40 +1388,7 @@
       }
     },
     {
-      "datasource": "loki",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 11,
-        "w": 12,
-        "x": 0,
-        "y": 24
-      },
-      "id": 64,
-      "options": {
-        "showLabels": false,
-        "showTime": false,
-        "sortOrder": "Ascending",
-        "wrapLogMessage": true
-      },
-      "targets": [
-        {
-          "expr": "{namespace=~\"$namespace\"}",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Log Opencell",
-      "type": "logs"
-    },
-    {
-      "datasource": "loki",
+      "datasource": "Loki",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -1511,25 +1399,26 @@
         "h": 11,
         "w": 12,
         "x": 12,
-        "y": 24
+        "y": 19
       },
       "id": 59,
       "options": {
         "showLabels": false,
         "showTime": false,
-        "sortOrder": "Descending",
+        "sortOrder": "Ascending",
         "wrapLogMessage": true
       },
       "targets": [
         {
-          "expr": "{app_kubernetes_io_name=~\"pure-ftpd\"}",
+          "expr": "{namespace=~\"$namespace\",pod=~\"$pod\"}",
           "legendFormat": "",
           "refId": "A"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Log FTP",
+      "title": "Log",
+      "transformations": [],
       "type": "logs"
     },
     {
@@ -1552,7 +1441,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 35
+        "y": 24
       },
       "hiddenSeries": false,
       "id": 43,
@@ -1573,8 +1462,11 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "7.2.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1661,106 +1553,13 @@
         },
         "overrides": []
       },
-      "fill": 2,
-      "fillGradient": 4,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 35
-      },
-      "hiddenSeries": false,
-      "id": 52,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 2,
-      "nullPointMode": "null",
-      "percentage": false,
-      "pluginVersion": "7.1.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "base_thread_count{namespace=~\"$namespace\",pod=~\"$pod\"}",
-          "interval": "",
-          "legendFormat": "{{namespace}} / {{pod}} ",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Base Thread",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "links": []
-        },
-        "overrides": []
-      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 41
+        "y": 30
       },
       "hiddenSeries": false,
       "id": 54,
@@ -1776,8 +1575,11 @@
       "lines": true,
       "linewidth": 1,
       "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
-      "pluginVersion": "7.1.5",
+      "pluginVersion": "7.2.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1833,23 +1635,122 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 2,
+      "fillGradient": 4,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 30
+      },
+      "hiddenSeries": false,
+      "id": 52,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 2,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.2.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "base_thread_count{namespace=~\"$namespace\",pod=~\"$pod\"}",
+          "interval": "",
+          "legendFormat": "{{namespace}} / {{pod}} ",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Base Thread",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
   "refresh": false,
   "schemaVersion": 26,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "Opencell"
+  ],
   "templating": {
     "list": [
       {
         "allValue": null,
         "current": {
           "selected": true,
+          "tags": [],
           "text": [
-            "client-test"
+            "All"
           ],
           "value": [
-            "client-test"
+            "$__all"
           ]
         },
         "datasource": "Prometheus",
@@ -1877,21 +1778,21 @@
           "selected": true,
           "tags": [],
           "text": [
-            "opencell-1"
+            "All"
           ],
           "value": [
-            "opencell-1"
+            "$__all"
           ]
         },
         "datasource": "Prometheus",
-        "definition": "label_values({pod=~\"opencell-.\"},pod)",
+        "definition": "label_values({pod=~\"opencell-.\",namespace=~\"$namespace\"},pod)",
         "hide": 0,
         "includeAll": true,
         "label": "pod",
         "multi": true,
         "name": "pod",
         "options": [],
-        "query": "label_values({pod=~\"opencell-.\"},pod)",
+        "query": "label_values({pod=~\"opencell-.\",namespace=~\"$namespace\"},pod)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1942,7 +1843,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "Opencell - Alpiq",
-  "uid": "6Mz4MxKMz",
-  "version": 5
+  "title": "Opencell all in one dashboard",
+  "uid": "rz0bj0ZGk",
+  "version": 7
 }
