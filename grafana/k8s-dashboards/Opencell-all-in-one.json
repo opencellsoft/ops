@@ -17,7 +17,7 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": 2,
-  "iteration": 1602518650036,
+  "iteration": 1603378615920,
   "links": [],
   "panels": [
     {
@@ -404,6 +404,14 @@
               {
                 "color": "green",
                 "value": null
+              },
+              {
+                "color": "orange",
+                "value": 10
+              },
+              {
+                "color": "red",
+                "value": 20
               }
             ]
           },
@@ -424,22 +432,22 @@
       "maxDataPoints": 100,
       "options": {
         "colorMode": "value",
-        "graphMode": "none",
+        "graphMode": "area",
         "justifyMode": "center",
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
           ],
-          "fields": "",
+          "fields": "/^Value$/",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "value"
       },
       "pluginVersion": "7.2.0",
       "targets": [
         {
-          "expr": "sum(promtail_custom_opencell_errors{exported_namespace=\"$namespace\",statefulset_kubernetes_io_pod_name=\"$pod\"})",
+          "expr": "sum(count_over_time(promtail_custom_opencell_errors{exported_namespace=\"$namespace\",exported_pod=\"$pod\"}[$__range]))",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -817,6 +825,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:526",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -825,6 +834,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:527",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1711,6 +1721,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:575",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1719,6 +1730,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:576",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1747,10 +1759,10 @@
           "selected": true,
           "tags": [],
           "text": [
-            "All"
+            "babilou-prod"
           ],
           "value": [
-            "$__all"
+            "babilou-prod"
           ]
         },
         "datasource": "Prometheus",
@@ -1778,10 +1790,10 @@
           "selected": true,
           "tags": [],
           "text": [
-            "All"
+            "opencell-0"
           ],
           "value": [
-            "$__all"
+            "opencell-0"
           ]
         },
         "datasource": "Prometheus",
@@ -1815,7 +1827,7 @@
     ]
   },
   "time": {
-    "from": "now-2d",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {
@@ -1845,5 +1857,5 @@
   "timezone": "browser",
   "title": "Opencell all in one dashboard",
   "uid": "rz0bj0ZGk",
-  "version": 7
+  "version": 12
 }
