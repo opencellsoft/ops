@@ -1,34 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_PROMETHEUS",
-      "label": "Prometheus",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "prometheus",
-      "pluginName": "Prometheus"
-    }
-  ],
-  "__requires": [
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "7.2.0"
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph",
-      "version": ""
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
-      "version": "1.0.0"
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -45,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": null,
-  "iteration": 1603467163698,
+  "id": 6,
+  "iteration": 1605256500567,
   "links": [],
   "panels": [
     {
@@ -54,7 +24,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -139,7 +109,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1186",
           "format": "decbytes",
           "label": null,
           "logBase": 1,
@@ -148,7 +117,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1187",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -167,7 +135,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -244,7 +212,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1133",
           "format": "decbytes",
           "label": null,
           "logBase": 1,
@@ -253,7 +220,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1134",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -272,7 +238,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -349,7 +315,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:974",
           "format": "decbytes",
           "label": null,
           "logBase": 1,
@@ -358,7 +323,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:975",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -377,7 +341,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -454,7 +418,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:921",
           "format": "decbytes",
           "label": null,
           "logBase": 1,
@@ -463,7 +426,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:922",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -482,7 +444,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -559,7 +521,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:780",
           "format": "decbytes",
           "label": null,
           "logBase": 1,
@@ -568,7 +529,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:781",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -587,7 +547,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -664,7 +624,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1027",
           "format": "decbytes",
           "label": null,
           "logBase": 1,
@@ -673,7 +632,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1028",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -692,7 +650,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -769,7 +727,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1080",
           "format": "decbytes",
           "label": null,
           "logBase": 1,
@@ -778,7 +735,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1081",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -797,7 +753,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -874,7 +830,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1239",
           "format": "decbytes",
           "label": null,
           "logBase": 1,
@@ -883,7 +838,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1240",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -902,7 +856,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -979,7 +933,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1598",
           "format": "decbytes",
           "label": null,
           "logBase": 1,
@@ -988,7 +941,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1599",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1007,7 +959,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1084,7 +1036,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1651",
           "format": "decbytes",
           "label": null,
           "logBase": 1,
@@ -1093,7 +1044,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1652",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1112,7 +1062,7 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1189,7 +1139,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1854",
           "format": "locale",
           "label": null,
           "logBase": 1,
@@ -1198,7 +1147,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1855",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1217,7 +1165,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1294,7 +1242,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:2625",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1303,7 +1250,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:2626",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1322,7 +1268,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1347,6 +1293,8 @@
         "max": true,
         "min": true,
         "show": true,
+        "sort": "max",
+        "sortDesc": true,
         "total": false,
         "values": true
       },
@@ -1399,7 +1347,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1907",
           "format": "s",
           "label": null,
           "logBase": 1,
@@ -1408,7 +1355,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1908",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1427,7 +1373,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1504,7 +1450,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:2729",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1513,7 +1458,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:2730",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1532,7 +1476,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1609,7 +1553,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:2782",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1618,7 +1561,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:2783",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1641,8 +1583,13 @@
     "list": [
       {
         "allValue": null,
-        "current": {},
-        "datasource": "${DS_PROMETHEUS}",
+        "current": {
+          "selected": true,
+          "tags": [],
+          "text": [],
+          "value": []
+        },
+        "datasource": "Prometheus",
         "definition": "label_values(base_gc_time_total_seconds,namespace)",
         "hide": 0,
         "includeAll": true,
@@ -1664,7 +1611,7 @@
     ]
   },
   "time": {
-    "from": "now-12h",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {
@@ -1683,6 +1630,6 @@
   },
   "timezone": "",
   "title": "JVM Details",
-  "uid": "quarkus-jvm",
-  "version": 40
+  "uid": "opencell-jvm",
+  "version": 2
 }
