@@ -16,8 +16,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 2,
-  "iteration": 1603378615920,
+  "id": 6,
+  "iteration": 1612189623033,
   "links": [],
   "panels": [
     {
@@ -280,6 +280,8 @@
         "rightSide": true,
         "show": true,
         "sideWidth": null,
+        "sort": "max",
+        "sortDesc": true,
         "total": false,
         "values": true
       },
@@ -291,7 +293,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.2.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -384,7 +386,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": "Loki",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -431,30 +433,26 @@
       "links": [],
       "maxDataPoints": 100,
       "options": {
-        "colorMode": "value",
+        "colorMode": "background",
         "graphMode": "area",
         "justifyMode": "center",
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "sum"
           ],
-          "fields": "/^Value$/",
+          "fields": "",
           "values": false
         },
-        "textMode": "value"
+        "textMode": "auto"
       },
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.2.1",
       "targets": [
         {
-          "expr": "sum(count_over_time(promtail_custom_opencell_errors{exported_namespace=\"$namespace\",exported_pod=\"$pod\"}[$__range]))",
-          "format": "time_series",
-          "instant": false,
-          "interval": "",
-          "intervalFactor": 1,
+          "expr": "count_over_time({namespace=~\"$namespace\",pod=~\"$pod\"} |= \" ERROR \" [$__interval])",
+          "hide": false,
           "legendFormat": "",
-          "refId": "A",
-          "step": 60
+          "refId": "A"
         }
       ],
       "timeFrom": null,
@@ -518,7 +516,7 @@
         },
         "textMode": "value"
       },
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.2.1",
       "targets": [
         {
           "expr": "base_jvm_uptime_seconds{namespace=~\"$namespace\",pod=~\"$pod\"}",
@@ -780,12 +778,13 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.2.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "seriesOverrides": [
         {
+          "$$hashKey": "object:2802",
           "alias": "load 1m",
           "color": "#BF1B00"
         }
@@ -887,7 +886,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -930,6 +929,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:3291",
           "format": "decbytes",
           "label": null,
           "logBase": 1,
@@ -938,6 +938,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:3292",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1201,14 +1202,31 @@
     },
     {
       "aliasColors": {},
-      "bars": false,
+      "bars": true,
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
-          "links": []
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
         },
         "overrides": []
       },
@@ -1226,6 +1244,8 @@
         "alignAsTable": false,
         "avg": false,
         "current": false,
+        "hideEmpty": false,
+        "hideZero": true,
         "max": false,
         "min": false,
         "rightSide": false,
@@ -1233,14 +1253,14 @@
         "total": false,
         "values": false
       },
-      "lines": true,
-      "linewidth": 1,
+      "lines": false,
+      "linewidth": 10,
       "nullPointMode": "connected",
       "options": {
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1301,19 +1321,37 @@
       }
     },
     {
-      "aliasColors": {},
-      "bars": true,
+      "aliasColors": {
+        "Errors": "red",
+        "Errors  babilou-prod / opencell-0": "red",
+        "Logs": "green"
+      },
+      "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "Loki",
       "fieldConfig": {
         "defaults": {
           "custom": {},
-          "links": []
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
         },
         "overrides": []
       },
-      "fill": 1,
+      "fill": 6,
       "fillGradient": 0,
       "gridPos": {
         "h": 5,
@@ -1324,9 +1362,11 @@
       "hiddenSeries": false,
       "id": 58,
       "legend": {
-        "alignAsTable": true,
+        "alignAsTable": false,
         "avg": false,
         "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
         "max": false,
         "min": false,
         "rightSide": false,
@@ -1334,14 +1374,14 @@
         "total": false,
         "values": false
       },
-      "lines": false,
-      "linewidth": 1,
+      "lines": true,
+      "linewidth": 0,
       "nullPointMode": "null",
       "options": {
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1351,9 +1391,16 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate({namespace=~\"$namespace\",pod=~\"$pod\"}[$__interval])",
-          "legendFormat": "",
+          "expr": "rate({namespace=~\"$namespace\",pod=~\"$pod\"} != \" ERROR \" [$__interval])",
+          "hide": false,
+          "legendFormat": "Logs {{namespace}} / {{pod}}",
           "refId": "A"
+        },
+        {
+          "expr": "rate({namespace=~\"$namespace\",pod=~\"$pod\"} |= \" ERROR \" [$__interval])",
+          "hide": false,
+          "legendFormat": "Errors  {{namespace}} / {{pod}}",
+          "refId": "B"
         }
       ],
       "thresholds": [],
@@ -1376,14 +1423,17 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:274",
+          "decimals": null,
           "format": "short",
-          "label": "",
-          "logBase": 1,
+          "label": "Nb Errors",
+          "logBase": 2,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
+          "$$hashKey": "object:275",
           "format": "short",
           "label": "",
           "logBase": 1,
@@ -1476,7 +1526,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1528,6 +1578,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:2927",
           "decimals": 0,
           "format": "short",
           "label": null,
@@ -1537,6 +1588,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:2928",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1589,7 +1641,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1685,7 +1737,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1759,10 +1811,10 @@
           "selected": true,
           "tags": [],
           "text": [
-            "babilou-prod"
+            "All"
           ],
           "value": [
-            "babilou-prod"
+            "$__all"
           ]
         },
         "datasource": "Prometheus",
@@ -1788,7 +1840,6 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "tags": [],
           "text": [
             "opencell-0"
           ],
@@ -1827,7 +1878,7 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
@@ -1857,5 +1908,5 @@
   "timezone": "browser",
   "title": "Opencell all in one dashboard",
   "uid": "rz0bj0ZGk",
-  "version": 12
+  "version": 22
 }
