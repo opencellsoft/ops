@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 6,
-  "iteration": 1605256500567,
+  "id": 4,
+  "iteration": 1616566699778,
   "links": [],
   "panels": [
     {
@@ -59,7 +59,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -71,19 +71,19 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(base_memory_usedHeap_bytes{namespace=\"$namespace\"})",
+          "expr": "sum(base_memory_usedHeap_bytes{namespace=\"$namespace\",pod=\"$pod\"})",
           "interval": "",
           "legendFormat": "Used",
           "refId": "A"
         },
         {
-          "expr": "sum(base_memory_committedHeap_bytes{namespace=\"$namespace\"})",
+          "expr": "sum(base_memory_committedHeap_bytes{namespace=\"$namespace\",pod=\"$pod\"})",
           "interval": "",
           "legendFormat": "Commited",
           "refId": "B"
         },
         {
-          "expr": "sum(base_memory_maxHeap_bytes{namespace=\"$namespace\"})",
+          "expr": "sum(base_memory_maxHeap_bytes{namespace=\"$namespace\",pod=\"$pod\"})",
           "interval": "",
           "legendFormat": "Max",
           "refId": "C"
@@ -170,7 +170,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -180,13 +180,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(base_memory_maxNonHeap_bytes{namespace=\"$namespace\"})",
+          "expr": "sum(base_memory_maxNonHeap_bytes{namespace=\"$namespace\",pod=\"$pod\"})",
           "interval": "",
           "legendFormat": "Used",
           "refId": "A"
         },
         {
-          "expr": "sum(base_memory_committedNonHeap_bytes{namespace=\"$namespace\"})",
+          "expr": "sum(base_memory_committedNonHeap_bytes{namespace=\"$namespace\",pod=\"$pod\"})",
           "interval": "",
           "legendFormat": "Committed",
           "refId": "B"
@@ -273,7 +273,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -283,13 +283,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "vendor_memoryPool_Eden_Space_usage_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_Eden_Space_usage_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Used",
           "refId": "A"
         },
         {
-          "expr": "vendor_memoryPool_Eden_Space_usage_max_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_Eden_Space_usage_max_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Max",
           "refId": "C"
@@ -376,7 +376,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -386,13 +386,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "vendor_memoryPool_Survivor_Space_usage_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_Survivor_Space_usage_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Used",
           "refId": "A"
         },
         {
-          "expr": "vendor_memoryPool_Survivor_Space_usage_max_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_Survivor_Space_usage_max_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Max",
           "refId": "C"
@@ -479,7 +479,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -489,13 +489,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "vendor_memoryPool_Tenured_Gen_usage_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_Tenured_Gen_usage_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Used",
           "refId": "A"
         },
         {
-          "expr": "vendor_memoryPool_Tenured_Gen_usage_max_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_Tenured_Gen_usage_max_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Max",
           "refId": "C"
@@ -582,7 +582,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -592,13 +592,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "vendor_memoryPool_Metaspace_usage_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_Metaspace_usage_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Used",
           "refId": "A"
         },
         {
-          "expr": "vendor_memoryPool_Metaspace_usage_max_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_Metaspace_usage_max_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Max",
           "refId": "C"
@@ -685,7 +685,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -695,13 +695,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "vendor_memoryPool_Compressed_Class_Space_usage_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_Compressed_Class_Space_usage_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Used - {{instance_label}}",
           "refId": "A"
         },
         {
-          "expr": "vendor_memoryPool_Compressed_Class_Space_usage_max_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_Compressed_Class_Space_usage_max_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Max - {{instance_label}}",
           "refId": "C"
@@ -788,7 +788,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -798,13 +798,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "vendor_memoryPool_CodeHeap_non_profiled_nmethods_usage_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_CodeHeap_non_profiled_nmethods_usage_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Used - {{instance_label}}",
           "refId": "A"
         },
         {
-          "expr": "vendor_memoryPool_CodeHeap_non_profiled_nmethods_usage_max_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_CodeHeap_non_profiled_nmethods_usage_max_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Max - {{instance_label}}",
           "refId": "C"
@@ -891,7 +891,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -901,13 +901,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "vendor_memoryPool_CodeHeap_non_profiled_nmethods_usage_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_CodeHeap_non_profiled_nmethods_usage_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Used",
           "refId": "A"
         },
         {
-          "expr": "vendor_memoryPool_CodeHeap_non_profiled_nmethods_usage_max_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_CodeHeap_non_profiled_nmethods_usage_max_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Max",
           "refId": "C"
@@ -994,7 +994,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1004,13 +1004,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "vendor_memoryPool_CodeHeap_non_nmethods_usage_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_CodeHeap_non_nmethods_usage_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Used",
           "refId": "A"
         },
         {
-          "expr": "vendor_memoryPool_CodeHeap_non_nmethods_usage_max_bytes{namespace=\"$namespace\"}",
+          "expr": "vendor_memoryPool_CodeHeap_non_nmethods_usage_max_bytes{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Max",
           "refId": "C"
@@ -1097,7 +1097,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1107,13 +1107,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "increase(base_gc_total{name=\"Copy1\",namespace=\"$namespace\"}[15s])",
+          "expr": "increase(base_gc_total{name=\"Copy1\",namespace=\"$namespace\",pod=\"$pod\"}[15s])",
           "interval": "",
           "legendFormat": "Minor GC",
           "refId": "A"
         },
         {
-          "expr": "increase(base_gc_total{name=\"MarkSweepCompact1\",namespace=\"$namespace\"}[15s])",
+          "expr": "increase(base_gc_total{name=\"MarkSweepCompact1\",namespace=\"$namespace\",pod=\"$pod\"}[15s])",
           "interval": "",
           "legendFormat": "Major GC",
           "refId": "B"
@@ -1200,7 +1200,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1210,13 +1210,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "base_cpu_systemLoadAverage{namespace=\"$namespace\"}",
+          "expr": "base_cpu_systemLoadAverage{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "System Average Loade",
           "refId": "A"
         },
         {
-          "expr": "base_cpu_availableProcessors{namespace=\"$namespace\"}",
+          "expr": "base_cpu_availableProcessors{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "CPU Size",
           "refId": "B"
@@ -1305,7 +1305,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1315,13 +1315,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(base_gc_time_total_seconds{name=\"MarkSweepCompact1\",namespace=\"$namespace\"}[1m])/rate(base_gc_total{name=\"MarkSweepCompact1\",namespace=\"$namespace\"}[1m])",
+          "expr": "rate(base_gc_time_total_seconds{name=\"MarkSweepCompact1\",namespace=\"$namespace\",pod=\"$pod\"}[1m])/rate(base_gc_total{name=\"MarkSweepCompact1\",namespace=\"$namespace\",pod=\"$pod\"}[1m])",
           "interval": "",
           "legendFormat": "Old Generation",
           "refId": "A"
         },
         {
-          "expr": "rate(base_gc_time_total_seconds{name=\"Copy1\",namespace=\"$namespace\"}[1m])/rate(base_gc_total{name=\"Copy1\",namespace=\"$namespace\"}[1m])",
+          "expr": "rate(base_gc_time_total_seconds{name=\"Copy1\",namespace=\"$namespace\",pod=\"$pod\"}[1m])/rate(base_gc_total{name=\"Copy1\",namespace=\"$namespace\",pod=\"$pod\"}[1m])",
           "interval": "",
           "legendFormat": "Young Generation",
           "refId": "B"
@@ -1408,7 +1408,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1418,13 +1418,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "base_classloader_loadedClasses_count{namespace=\"$namespace\"}",
+          "expr": "base_classloader_loadedClasses_count{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Loaded Classes - Current",
           "refId": "A"
         },
         {
-          "expr": "base_classloader_unloadedClasses_total{namespace=\"$namespace\"}",
+          "expr": "base_classloader_unloadedClasses_total{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Unloaded Classes - Total",
           "refId": "B"
@@ -1511,7 +1511,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.0",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1521,13 +1521,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "base_thread_daemon_count{namespace=\"$namespace\"}",
+          "expr": "base_thread_daemon_count{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "Only Deamon",
           "refId": "A"
         },
         {
-          "expr": "base_thread_count{namespace=\"$namespace\"}",
+          "expr": "base_thread_count{namespace=\"$namespace\",pod=\"$pod\"}",
           "interval": "",
           "legendFormat": "All Live",
           "refId": "B"
@@ -1576,7 +1576,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 26,
+  "schemaVersion": 27,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -1585,19 +1585,54 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "tags": [],
-          "text": [],
-          "value": []
+          "text": "alpiq-recette",
+          "value": "alpiq-recette"
         },
         "datasource": "Prometheus",
         "definition": "label_values(base_gc_time_total_seconds,namespace)",
+        "description": null,
+        "error": null,
         "hide": 0,
-        "includeAll": true,
+        "includeAll": false,
         "label": "namespace",
-        "multi": true,
+        "multi": false,
         "name": "namespace",
         "options": [],
-        "query": "label_values(base_gc_time_total_seconds,namespace)",
+        "query": {
+          "query": "label_values(base_gc_time_total_seconds,namespace)",
+          "refId": "Prometheus-namespace-Variable-Query"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": "opencell-1",
+          "value": "opencell-1"
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(base_gc_time_total_seconds{namespace=\"$namespace\"},pod)",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "pod",
+        "multi": false,
+        "name": "pod",
+        "options": [],
+        "query": {
+          "query": "label_values(base_gc_time_total_seconds{namespace=\"$namespace\"},pod)",
+          "refId": "StandardVariableQuery"
+        },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1611,7 +1646,7 @@
     ]
   },
   "time": {
-    "from": "now-2d",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -1631,5 +1666,5 @@
   "timezone": "",
   "title": "JVM Details",
   "uid": "opencell-jvm",
-  "version": 2
+  "version": 3
 }
