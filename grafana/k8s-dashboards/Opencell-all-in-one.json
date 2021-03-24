@@ -16,12 +16,11 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 6,
-  "iteration": 1612189623033,
+  "id": 2,
+  "iteration": 1616567588894,
   "links": [],
   "panels": [
     {
-      "content": "",
       "datasource": "Prometheus",
       "description": "",
       "fieldConfig": {
@@ -43,12 +42,11 @@
           "url": ""
         }
       ],
-      "mode": "html",
       "options": {
         "content": "",
         "mode": "html"
       },
-      "pluginVersion": "7.1.0",
+      "pluginVersion": "7.4.2",
       "timeFrom": null,
       "timeShift": null,
       "title": "Serveur Wildfly",
@@ -293,7 +291,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.1",
+      "pluginVersion": "7.4.2",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -399,7 +397,6 @@
               "value": "null"
             }
           ],
-          "nullValueMode": "connected",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -444,9 +441,10 @@
           "fields": "",
           "values": false
         },
+        "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.2.1",
+      "pluginVersion": "7.4.2",
       "targets": [
         {
           "expr": "count_over_time({namespace=~\"$namespace\",pod=~\"$pod\"} |= \" ERROR \" [$__interval])",
@@ -477,7 +475,6 @@
               "value": "null"
             }
           ],
-          "nullValueMode": "connected",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -514,9 +511,10 @@
           "fields": "",
           "values": false
         },
+        "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "7.2.1",
+      "pluginVersion": "7.4.2",
       "targets": [
         {
           "expr": "base_jvm_uptime_seconds{namespace=~\"$namespace\",pod=~\"$pod\"}",
@@ -778,7 +776,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.1",
+      "pluginVersion": "7.4.2",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -886,7 +884,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.1",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1208,24 +1206,11 @@
       "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "align": null,
-            "filterable": false
-          },
+          "custom": {},
           "links": [],
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
+            "steps": []
           }
         },
         "overrides": []
@@ -1260,7 +1245,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.1",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1334,19 +1319,9 @@
         "defaults": {
           "custom": {},
           "links": [],
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
+            "steps": []
           }
         },
         "overrides": []
@@ -1381,7 +1356,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.1",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1526,7 +1501,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.1",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1641,7 +1616,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.1",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1737,7 +1712,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.2.1",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1798,7 +1773,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 26,
+  "schemaVersion": 27,
   "style": "dark",
   "tags": [
     "Opencell"
@@ -1811,21 +1786,26 @@
           "selected": true,
           "tags": [],
           "text": [
-            "All"
+            "alpiq-recette"
           ],
           "value": [
-            "$__all"
+            "alpiq-recette"
           ]
         },
         "datasource": "Prometheus",
         "definition": "label_values({pod=~\"opencell-.\"}, namespace)",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": true,
         "label": "namespace",
         "multi": true,
         "name": "namespace",
         "options": [],
-        "query": "label_values({pod=~\"opencell-.\"}, namespace)",
+        "query": {
+          "query": "label_values({pod=~\"opencell-.\"}, namespace)",
+          "refId": "Prometheus-namespace-Variable-Query"
+        },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1840,6 +1820,7 @@
         "allValue": null,
         "current": {
           "selected": true,
+          "tags": [],
           "text": [
             "opencell-0"
           ],
@@ -1849,13 +1830,18 @@
         },
         "datasource": "Prometheus",
         "definition": "label_values({pod=~\"opencell-.\",namespace=~\"$namespace\"},pod)",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": true,
         "label": "pod",
         "multi": true,
         "name": "pod",
         "options": [],
-        "query": "label_values({pod=~\"opencell-.\",namespace=~\"$namespace\"},pod)",
+        "query": {
+          "query": "label_values({pod=~\"opencell-.\",namespace=~\"$namespace\"},pod)",
+          "refId": "Prometheus-pod-Variable-Query"
+        },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1868,6 +1854,8 @@
       },
       {
         "datasource": "Prometheus",
+        "description": null,
+        "error": null,
         "filters": [],
         "hide": 0,
         "label": "",
@@ -1878,7 +1866,7 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
@@ -1908,5 +1896,5 @@
   "timezone": "browser",
   "title": "Opencell all in one dashboard",
   "uid": "rz0bj0ZGk",
-  "version": 22
+  "version": 2
 }
